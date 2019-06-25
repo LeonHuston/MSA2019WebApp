@@ -6,6 +6,7 @@ import Result from "./Components/Result/Result";
 interface IState {
   result: string;
   fileLength: number;
+  darkMode: boolean;
 }
 
 class App extends Component<{}, IState> {
@@ -13,7 +14,8 @@ class App extends Component<{}, IState> {
     super(props);
     this.state = {
       result: "",
-      fileLength: 0
+      fileLength: 0,
+      darkMode: true
     };
   }
 
@@ -21,12 +23,28 @@ class App extends Component<{}, IState> {
     this.setState({ result: resultSring, fileLength: fileLen });
   };
 
+  public toggleTheme = () => {
+    this.setState({
+      darkMode: !this.state.darkMode
+    });
+  };
+
   public render() {
     return (
-      <div>
-        <Header />
-        <DropArea setResults={this.resultState} />
-        <Result result={this.state.result} fileLength={this.state.fileLength} />
+      <div className={`App ${this.state.darkMode ? "dark" : "light"}`}>
+        <Header darkMode={this.state.darkMode} />
+        <button className="themeButton" onClick={this.toggleTheme}>
+          Press this to toggle Dark Mode!!
+        </button>
+        <DropArea
+          setResults={this.resultState}
+          darkMode={this.state.darkMode}
+        />
+        <Result
+          result={this.state.result}
+          fileLength={this.state.fileLength}
+          darkMode={this.state.darkMode}
+        />
       </div>
     );
   }

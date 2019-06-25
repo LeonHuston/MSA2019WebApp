@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "./DropArea.css";
 import ReactDropzone from "react-dropzone";
-import { any } from "prop-types";
-import { relative } from "path";
 
 interface IState {
   imagesFiles: any[];
@@ -11,6 +9,7 @@ interface IState {
 
 interface IProps {
   setResults: any;
+  darkMode: boolean;
 }
 
 export default class DropArea extends Component<IProps, IState> {
@@ -55,14 +54,14 @@ export default class DropArea extends Component<IProps, IState> {
     }).then((response: any) => {
       if (!response.ok) {
         this.props.setResults(
-          "Sorry there was an error",
+          "Sorry there was an error.",
           this.state.imagesFiles.length
         );
       } else {
         response.json().then((json: any[]) => {
           if (json.length < 1) {
             this.props.setResults(
-              "Sorry no face detected",
+              "Sorry no face detected.",
               this.state.imagesFiles.length
             );
           } else {
@@ -79,7 +78,11 @@ export default class DropArea extends Component<IProps, IState> {
     return (
       <div className="cont">
         <div className="centreText">
-          <div className="dropZone">
+          <div
+            className={`dropZone ${
+              this.props.darkMode ? "darkTheme" : "lightTheme"
+            }`}
+          >
             <ReactDropzone
               accept="image/*"
               onDrop={this.state.dropzone}

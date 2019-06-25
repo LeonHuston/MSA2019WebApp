@@ -2,5 +2,25 @@ body {
     margin: 0;
     padding: 0;
     font-family: Helvetica, sans-serif;
+    height: 100%;
+}
+
+main {
+    height: 100%
+}
+
+.dark {
     background-color: #323639;
+    color: white
+}
+
+.light {
+    background-color: white;
+    color: black
+}
+
+.themeButton {
+    margin-left: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }

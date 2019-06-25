@@ -4,12 +4,13 @@ import Loader from "react-loader-spinner";
 interface IProps {
   result: string;
   fileLength: any;
+  darkMode: boolean;
 }
 
 export default class Result extends Component<IProps, {}> {
   public render() {
     return (
-      <div className="dank">
+      <div className={`dank ${this.props.darkMode ? "textDark" : "textLight"}`}>
         {this.props.result === "" && this.props.fileLength > 0 ? (
           <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
         ) : (

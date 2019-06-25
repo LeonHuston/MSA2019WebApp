@@ -13,9 +13,17 @@ h1 {
     padding-top: 5px;
     padding-bottom: 0px;
     height: 51vh;
-    background-color: #202125;
     border-radius: 20px;
+}
+
+.darkTheme {
+    background-color: #202125;
     color: white;
+}
+
+.lightTheme {
+    background-color: lightgrey;
+    color: black;
 }
 
 .image1 {
@@ -26,9 +34,17 @@ h1 {
 .dank {
     display: flex;
     justify-content: center;
-    color: white;
     font-size: 20px;
 }
+
+.textLight {
+    color: black
+}
+
+.textDark {
+    color: white;
+}
+
 
 .dropZoneText {
     height: 50vh;
