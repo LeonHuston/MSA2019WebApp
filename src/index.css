@@ -2,11 +2,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: Helvetica, sans-serif;
-    height: 100%;
 }
 
-main {
-    height: 100%
+body>#root>div {
+    height: 100vh;
 }
 
 .dark {
@@ -23,4 +22,18 @@ main {
     margin-left: 50px;
     margin-top: 25px;
     margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.buttonDark {
+    background-color: #323639;
+    color: white;
+    border: 2px solid white;
+}
+
+.buttonLight {
+    background-color: white;
+    color: black;
+    border: 2px solid #323639;
 }
