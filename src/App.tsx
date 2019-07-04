@@ -33,8 +33,13 @@ class App extends Component<{}, IState> {
     return (
       <div className={`App ${this.state.darkMode ? "dark" : "light"}`}>
         <Header darkMode={this.state.darkMode} />
-        <button className={`themeButton ${this.state.darkMode ? "buttonDark" : "buttonLight"}`} onClick={this.toggleTheme}>
-          Press this to toggle Dark Mode!!
+        <button
+          className={`themeButton ${
+            this.state.darkMode ? "buttonDark" : "buttonLight"
+          }`}
+          onClick={this.toggleTheme}
+        >
+          Click here to toggle dark mode!!!
         </button>
         <DropArea
           setResults={this.resultState}
